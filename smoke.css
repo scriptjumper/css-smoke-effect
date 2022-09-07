@@ -1,0 +1,16 @@
+body {
+    background-color: #000;
+}
+
+span {
+    text-shadow: 0 0 0 whitesmoke;
+    animation: smoky 5s;
+    font-size: 5em;
+}
+
+@keyframes smoky {
+    to {
+        text-shadow: 0 0 20px whitesmoke;
+        opacity: 0;
+    }
+}
