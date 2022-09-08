@@ -1,16 +1,53 @@
-body {
-    background-color: #000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-span {
-    text-shadow: 0 0 0 whitesmoke;
-    animation: smoky 5s;
-    font-size: 5em;
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    overflow: hidden;
 }
 
-@keyframes smoky {
-    to {
-        text-shadow: 0 0 20px whitesmoke;
+section .text {
+    position: relative;
+    color: rgba(255, 255, 255, 0.938);
+    margin: 40px;
+    user-select: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+}
+
+section .text span {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+section .active {
+    animation: smoke 2s linear forwards;
+}
+
+@keyframes smoke {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    100% {
         opacity: 0;
+        filter: blur(20px);
+        transform: translateX(300px) translateY(-300px) rotate(720deg) scale(4);
     }
 }
